@@ -1,0 +1,11 @@
+
+Test Driven Development
+
+1. Die Funktion/Methode darf nur Zahlen X zurückgeben.
+
+2. Die Funktion/Methode darf nur Positive Zahlen X zurückgeben.
+
+3. Die Funktion/Methode darf nur Gerade Zahlen X zurückgeben.
+
+
+32.413 Anforderung
