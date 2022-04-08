@@ -72,6 +72,8 @@ public class SternHaus {
 			setzeStein(zeichen);
 		}
 		System.out.println();
+		
+		//System.out.println(zeichen.repeat(breite));
 	}
 
 	public static void setzeStein(String zeichen) {
