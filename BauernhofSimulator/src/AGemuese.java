@@ -1,5 +1,5 @@
 
-public class Gemuese {
+public abstract class AGemuese implements IFressbar{
 
 	private String name;
 
@@ -12,7 +12,7 @@ public class Gemuese {
 	}
 
 	public void wirdgefressen() {
-		
+		System.out.println(this.getClass().getName() + " wird gefressen");
 	}
 	
 }

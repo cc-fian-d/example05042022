@@ -1,4 +1,4 @@
 
-public class Ruebe extends Gemuese{
+public class Ruebe extends AGemuese{
 
 }

@@ -1,4 +1,4 @@
 
-public class Chinakohl extends Gemuese{
+public class Chinakohl extends AGemuese{
 
 }

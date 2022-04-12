@@ -1,4 +1,4 @@
 
-public class Kohl extends Gemuese{
+public class Kohl extends AGemuese{
 
 }

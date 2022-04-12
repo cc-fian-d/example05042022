@@ -1,4 +1,4 @@
 
-public class Zwiebel extends Gemuese {
+public class Zwiebel extends AGemuese {
 
 }

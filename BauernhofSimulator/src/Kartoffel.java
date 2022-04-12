@@ -1,5 +1,5 @@
 
-public class Kartoffel extends Gemuese{
+public class Kartoffel extends AGemuese{
 
 	private int knollen;
 
@@ -21,6 +21,7 @@ public class Kartoffel extends Gemuese{
 		this.setKnollen(knollen);
 	}
 	
+	@Override
 	public String toString() {
 		return this.getName() + " : " + this.getKnollen();
 	}

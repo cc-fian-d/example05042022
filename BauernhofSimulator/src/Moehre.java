@@ -1,5 +1,5 @@
 
-public class Moehre extends Gemuese {
+public class Moehre extends AGemuese {
 
 	private int laenge;
 
