@@ -14,6 +14,10 @@ public class Restaurant {
 		this.stuehle = stuehle;
 	}
 	
+	public Stuhl getStuhl(int index) {
+		return stuehle.get(index);
+	}
+	
 	public void addStuhl(Stuhl stuhl) {
 		stuehle.add(stuhl);
 	}

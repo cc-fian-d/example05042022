@@ -14,6 +14,8 @@ public class Manager {
 		r01.addStuhl(s02);
 		r01.addStuhl(s03);
 		r01.addStuhl(s04);
+		
+		Stuhl s05 = r01.getStuhl(0);
 	}
 
 }
