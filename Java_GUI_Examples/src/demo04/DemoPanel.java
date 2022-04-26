@@ -4,6 +4,7 @@ import java.awt.Color;
 
 import javax.swing.JButton;
 import javax.swing.JFrame;
+import javax.swing.JLabel;
 import javax.swing.JPanel;
 
 public class DemoPanel {
@@ -54,6 +55,8 @@ public class DemoPanel {
 		 * contentPanes in Zeile 51 hat der Frame nur 1 Panel
 		 */
 
+		panel.add(new JLabel("Ich wurde nach dem Hinzufügen zum Frame erzeugt."));
+		
 		/**
 		 * als letztes den Frame sichtbar schalten
 		 */
