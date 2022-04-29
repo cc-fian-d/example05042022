@@ -1,38 +1,35 @@
 package prototyp;
 
+import java.awt.BorderLayout;
+import java.awt.Color;
+import java.awt.Component;
 import java.awt.EventQueue;
-import java.awt.FlowLayout;
+import java.awt.GridLayout;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
-import javax.swing.JFrame;
 import javax.swing.Box;
 import javax.swing.JButton;
-import java.awt.BorderLayout;
-import javax.swing.JPanel;
-import java.awt.Color;
-import java.awt.GridLayout;
+import javax.swing.JFrame;
 import javax.swing.JLabel;
-import javax.swing.JTextField;
-import javax.swing.JScrollPane;
-import javax.swing.JTextArea;
-import javax.swing.JMenuBar;
 import javax.swing.JMenu;
+import javax.swing.JMenuBar;
 import javax.swing.JMenuItem;
 import javax.swing.JOptionPane;
-import javax.swing.JSeparator;
+import javax.swing.JPanel;
 import javax.swing.JRadioButtonMenuItem;
+import javax.swing.JScrollPane;
+import javax.swing.JSeparator;
+import javax.swing.JTextArea;
+import javax.swing.JTextField;
 import javax.swing.SwingConstants;
-import java.awt.Component;
-import java.awt.event.MouseAdapter;
-import java.awt.event.MouseEvent;
-import java.awt.event.ActionListener;
-import java.awt.event.ActionEvent;
 
 /**
  * Aufgabe dieser Klasse ist die Erstellung/Darstellung der GUI.
  * 
  *
  */
-public class Prototyp01 {
+public class Prototyp01 implements ActionListener{
 
 	private JFrame frame;
 	private JTextField textField;
@@ -130,11 +127,11 @@ public class Prototyp01 {
 		mnNewMenu.setHorizontalAlignment(SwingConstants.TRAILING);
 		menuBar.add(mnNewMenu);
 
-		JMenuItem mntmNewMenuItem = new JMenuItem("File load");
+		JMenuItem mntmNewMenuItem = new MyJMenuItem("File load");
 		mntmNewMenuItem.setHorizontalAlignment(SwingConstants.LEFT);
 		mnNewMenu.add(mntmNewMenuItem);
 
-		JMenuItem mntmNewMenuItem_1 = new JMenuItem("File save");
+		JMenuItem mntmNewMenuItem_1 = new MyJMenuItem("File save");
 		mnNewMenu.add(mntmNewMenuItem_1);
 
 		JSeparator separator_1 = new JSeparator();
@@ -143,43 +140,43 @@ public class Prototyp01 {
 		JMenu mnNewMenu_1 = new JMenu("Import");
 		mnNewMenu.add(mnNewMenu_1);
 
-		JMenuItem mntmNewMenuItem_2 = new JMenuItem("CSV");
+		JMenuItem mntmNewMenuItem_2 = new MyJMenuItem("CSV");
 		mnNewMenu_1.add(mntmNewMenuItem_2);
 
-		JMenuItem mntmNewMenuItem_5 = new JMenuItem("XML");
+		JMenuItem mntmNewMenuItem_5 = new MyJMenuItem("XML");
 		mnNewMenu_1.add(mntmNewMenuItem_5);
 
-		JMenuItem mntmNewMenuItem_3 = new JMenuItem("Export ...");
+		JMenuItem mntmNewMenuItem_3 = new MyJMenuItem("Export ...");
 		mnNewMenu.add(mntmNewMenuItem_3);
 
 		JSeparator separator = new JSeparator();
 		mnNewMenu.add(separator);
 
-		JMenuItem mntmNewMenuItem_4 = new JMenuItem("Exit");
+		JMenuItem mntmNewMenuItem_4 = new MyJMenuItem("Exit");
 		mnNewMenu.add(mntmNewMenuItem_4);
 
 		JMenu mnNewMenu_2 = new JMenu("Edit");
 		menuBar.add(mnNewMenu_2);
 
-		JMenuItem mntmNewMenuItem_6 = new JMenuItem("search");
+		JMenuItem mntmNewMenuItem_6 = new MyJMenuItem("search");
 		mnNewMenu_2.add(mntmNewMenuItem_6);
 
-		JMenuItem mntmNewMenuItem_7 = new JMenuItem("replace");
+		JMenuItem mntmNewMenuItem_7 = new MyJMenuItem("replace");
 		mnNewMenu_2.add(mntmNewMenuItem_7);
 
-		JMenuItem mntmNewMenuItem_8 = new JMenuItem("delete all");
+		JMenuItem mntmNewMenuItem_8 = new MyJMenuItem("delete all");
 		mnNewMenu_2.add(mntmNewMenuItem_8);
 
-		JMenuItem mntmNewMenuItem_9 = new JMenuItem("undo");
+		JMenuItem mntmNewMenuItem_9 = new MyJMenuItem("undo");
 		mnNewMenu_2.add(mntmNewMenuItem_9);
 
 		JMenu mnNewMenu_3 = new JMenu("View");
 		menuBar.add(mnNewMenu_3);
 
-		JMenuItem mntmNewMenuItem_11 = new JMenuItem("Small");
+		JMenuItem mntmNewMenuItem_11 = new MyJMenuItem("Small");
 		mnNewMenu_3.add(mntmNewMenuItem_11);
 
-		JMenuItem mntmNewMenuItem_10 = new JMenuItem("Large");
+		JMenuItem mntmNewMenuItem_10 = new MyJMenuItem("Large");
 		mnNewMenu_3.add(mntmNewMenuItem_10);
 
 		JRadioButtonMenuItem rdbtnmntmNewRadioItem = new JRadioButtonMenuItem(
@@ -194,25 +191,25 @@ public class Prototyp01 {
 		mnNewMenu_4.setHorizontalAlignment(SwingConstants.RIGHT);
 		menuBar.add(mnNewMenu_4);
 
-		JMenuItem mntmNewMenuItem_16 = new JMenuItem("New menu item");
+		JMenuItem mntmNewMenuItem_16 = new MyJMenuItem("New menu item");
 		mnNewMenu_4.add(mntmNewMenuItem_16);
 
-		JMenuItem mntmNewMenuItem_17 = new JMenuItem("New menu item");
+		JMenuItem mntmNewMenuItem_17 = new MyJMenuItem("New menu item");
 		mnNewMenu_4.add(mntmNewMenuItem_17);
 
-		JMenuItem mntmNewMenuItem_18 = new JMenuItem("New menu item");
+		JMenuItem mntmNewMenuItem_18 = new MyJMenuItem("New menu item");
 		mnNewMenu_4.add(mntmNewMenuItem_18);
 
-		JMenuItem mntmNewMenuItem_19 = new JMenuItem("New menu item");
+		JMenuItem mntmNewMenuItem_19 = new MyJMenuItem("New menu item");
 		mnNewMenu_4.add(mntmNewMenuItem_19);
 
-		JMenuItem mntmNewMenuItem_20 = new JMenuItem("New menu item");
+		JMenuItem mntmNewMenuItem_20 = new MyJMenuItem("New menu item");
 		mnNewMenu_4.add(mntmNewMenuItem_20);
 
-		JMenuItem mntmNewMenuItem_21 = new JMenuItem("New menu item");
+		JMenuItem mntmNewMenuItem_21 = new MyJMenuItem("New menu item");
 		mnNewMenu_4.add(mntmNewMenuItem_21);
 
-		JMenuItem mntmNewMenuItem_22 = new JMenuItem("New menu item");
+		JMenuItem mntmNewMenuItem_22 = new MyJMenuItem("New menu item");
 		mnNewMenu_4.add(mntmNewMenuItem_22);
 
 		Component horizontalGlue = Box.createHorizontalGlue();
@@ -221,17 +218,37 @@ public class Prototyp01 {
 		JMenu mnNewMenu_5 = new JMenu("Help");
 		menuBar.add(mnNewMenu_5);
 
-		JMenuItem mntmNewMenuItem_12 = new JMenuItem("find Plugin");
+		JMenuItem mntmNewMenuItem_12 = new MyJMenuItem("find Plugin");
 		mnNewMenu_5.add(mntmNewMenuItem_12);
 
-		JMenuItem mntmNewMenuItem_13 = new JMenuItem("what is ... ?");
+		JMenuItem mntmNewMenuItem_13 = new MyJMenuItem("what is ... ?");
 		mnNewMenu_5.add(mntmNewMenuItem_13);
 
-		JMenuItem mntmNewMenuItem_14 = new JMenuItem("Example JSON");
+		JMenuItem mntmNewMenuItem_14 = new MyJMenuItem("Example JSON");
 		mnNewMenu_5.add(mntmNewMenuItem_14);
 
-		JMenuItem mntmNewMenuItem_15 = new JMenuItem("about");
-
+		JMenuItem mntmNewMenuItem_15 = new MyJMenuItem("about");
+		mntmNewMenuItem_15.addActionListener(this);
 		mnNewMenu_5.add(mntmNewMenuItem_15);
+	}
+
+	@Override
+	public void actionPerformed(ActionEvent e) {
+		System.out.println(e.getActionCommand());
+		
+		switch(e.getActionCommand().toLowerCase()) {
+		case "EXIT":{
+			System.exit(0);
+			break;
+		}
+		case "about":{
+			JOptionPane.showMessageDialog(frame, "Dies ist der About Dialog");
+			break;
+		}
+		default:{
+			System.out.println("Bitte was?");
+		}
+		}
+		
 	}
 }
