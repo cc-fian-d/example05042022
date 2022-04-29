@@ -127,11 +127,12 @@ public class Prototyp01 implements ActionListener{
 		mnNewMenu.setHorizontalAlignment(SwingConstants.TRAILING);
 		menuBar.add(mnNewMenu);
 
-		JMenuItem mntmNewMenuItem = new MyJMenuItem("File load");
-		mntmNewMenuItem.setHorizontalAlignment(SwingConstants.LEFT);
+		JMenuItem mntmNewMenuItem = new JMenuItem("File load");
+		mntmNewMenuItem.addActionListener(this);
 		mnNewMenu.add(mntmNewMenuItem);
 
-		JMenuItem mntmNewMenuItem_1 = new MyJMenuItem("File save");
+		JMenuItem mntmNewMenuItem_1 = new JMenuItem("File save");
+		mntmNewMenuItem_1.addActionListener(this);
 		mnNewMenu.add(mntmNewMenuItem_1);
 
 		JSeparator separator_1 = new JSeparator();
@@ -140,43 +141,53 @@ public class Prototyp01 implements ActionListener{
 		JMenu mnNewMenu_1 = new JMenu("Import");
 		mnNewMenu.add(mnNewMenu_1);
 
-		JMenuItem mntmNewMenuItem_2 = new MyJMenuItem("CSV");
+		JMenuItem mntmNewMenuItem_2 = new JMenuItem("CSV");
+		mntmNewMenuItem_2.addActionListener(this);
 		mnNewMenu_1.add(mntmNewMenuItem_2);
 
-		JMenuItem mntmNewMenuItem_5 = new MyJMenuItem("XML");
+		JMenuItem mntmNewMenuItem_5 = new JMenuItem("XML");
+		mntmNewMenuItem_5.addActionListener(this);
 		mnNewMenu_1.add(mntmNewMenuItem_5);
 
-		JMenuItem mntmNewMenuItem_3 = new MyJMenuItem("Export ...");
+		JMenuItem mntmNewMenuItem_3 = new JMenuItem("Export ...");
+		mntmNewMenuItem_3.addActionListener(this);
 		mnNewMenu.add(mntmNewMenuItem_3);
 
 		JSeparator separator = new JSeparator();
 		mnNewMenu.add(separator);
 
-		JMenuItem mntmNewMenuItem_4 = new MyJMenuItem("Exit");
+		JMenuItem mntmNewMenuItem_4 = new JMenuItem("Exit");
+		mntmNewMenuItem_4.addActionListener(this);
 		mnNewMenu.add(mntmNewMenuItem_4);
 
 		JMenu mnNewMenu_2 = new JMenu("Edit");
 		menuBar.add(mnNewMenu_2);
 
-		JMenuItem mntmNewMenuItem_6 = new MyJMenuItem("search");
+		JMenuItem mntmNewMenuItem_6 = new JMenuItem("search");
+		mntmNewMenuItem_6.addActionListener(this);
 		mnNewMenu_2.add(mntmNewMenuItem_6);
 
-		JMenuItem mntmNewMenuItem_7 = new MyJMenuItem("replace");
+		JMenuItem mntmNewMenuItem_7 = new JMenuItem("replace");
+		mntmNewMenuItem_7.addActionListener(this);
 		mnNewMenu_2.add(mntmNewMenuItem_7);
 
-		JMenuItem mntmNewMenuItem_8 = new MyJMenuItem("delete all");
+		JMenuItem mntmNewMenuItem_8 = new JMenuItem("delete all");
+		mntmNewMenuItem_8.addActionListener(this);
 		mnNewMenu_2.add(mntmNewMenuItem_8);
 
-		JMenuItem mntmNewMenuItem_9 = new MyJMenuItem("undo");
+		JMenuItem mntmNewMenuItem_9 = new JMenuItem("undo");
+		mntmNewMenuItem_9.addActionListener(this);
 		mnNewMenu_2.add(mntmNewMenuItem_9);
 
 		JMenu mnNewMenu_3 = new JMenu("View");
 		menuBar.add(mnNewMenu_3);
 
-		JMenuItem mntmNewMenuItem_11 = new MyJMenuItem("Small");
+		JMenuItem mntmNewMenuItem_11 = new JMenuItem("Small");
+		mntmNewMenuItem_11.addActionListener(this);
 		mnNewMenu_3.add(mntmNewMenuItem_11);
 
-		JMenuItem mntmNewMenuItem_10 = new MyJMenuItem("Large");
+		JMenuItem mntmNewMenuItem_10 = new JMenuItem("Large");
+		mntmNewMenuItem_10.addActionListener(this);
 		mnNewMenu_3.add(mntmNewMenuItem_10);
 
 		JRadioButtonMenuItem rdbtnmntmNewRadioItem = new JRadioButtonMenuItem(
@@ -191,25 +202,32 @@ public class Prototyp01 implements ActionListener{
 		mnNewMenu_4.setHorizontalAlignment(SwingConstants.RIGHT);
 		menuBar.add(mnNewMenu_4);
 
-		JMenuItem mntmNewMenuItem_16 = new MyJMenuItem("New menu item");
+		JMenuItem mntmNewMenuItem_16 = new JMenuItem("New menu item");
+		mntmNewMenuItem_16.addActionListener(this);
 		mnNewMenu_4.add(mntmNewMenuItem_16);
 
-		JMenuItem mntmNewMenuItem_17 = new MyJMenuItem("New menu item");
+		JMenuItem mntmNewMenuItem_17 = new JMenuItem("New menu item");
+		mntmNewMenuItem_17.addActionListener(this);
 		mnNewMenu_4.add(mntmNewMenuItem_17);
 
-		JMenuItem mntmNewMenuItem_18 = new MyJMenuItem("New menu item");
+		JMenuItem mntmNewMenuItem_18 = new JMenuItem("New menu item");
+		mntmNewMenuItem_18.addActionListener(this);
 		mnNewMenu_4.add(mntmNewMenuItem_18);
 
-		JMenuItem mntmNewMenuItem_19 = new MyJMenuItem("New menu item");
+		JMenuItem mntmNewMenuItem_19 = new JMenuItem("New menu item");
+		mntmNewMenuItem_19.addActionListener(this);
 		mnNewMenu_4.add(mntmNewMenuItem_19);
 
-		JMenuItem mntmNewMenuItem_20 = new MyJMenuItem("New menu item");
+		JMenuItem mntmNewMenuItem_20 = new JMenuItem("New menu item");
+		mntmNewMenuItem_20.addActionListener(this);
 		mnNewMenu_4.add(mntmNewMenuItem_20);
 
-		JMenuItem mntmNewMenuItem_21 = new MyJMenuItem("New menu item");
+		JMenuItem mntmNewMenuItem_21 = new JMenuItem("New menu item");
+		mntmNewMenuItem_21.addActionListener(this);
 		mnNewMenu_4.add(mntmNewMenuItem_21);
 
-		JMenuItem mntmNewMenuItem_22 = new MyJMenuItem("New menu item");
+		JMenuItem mntmNewMenuItem_22 = new JMenuItem("New menu item");
+		mntmNewMenuItem_22.addActionListener(this);
 		mnNewMenu_4.add(mntmNewMenuItem_22);
 
 		Component horizontalGlue = Box.createHorizontalGlue();
@@ -218,16 +236,19 @@ public class Prototyp01 implements ActionListener{
 		JMenu mnNewMenu_5 = new JMenu("Help");
 		menuBar.add(mnNewMenu_5);
 
-		JMenuItem mntmNewMenuItem_12 = new MyJMenuItem("find Plugin");
+		JMenuItem mntmNewMenuItem_12 = new JMenuItem("find Plugin");
+		mntmNewMenuItem_12.addActionListener(this);
 		mnNewMenu_5.add(mntmNewMenuItem_12);
 
-		JMenuItem mntmNewMenuItem_13 = new MyJMenuItem("what is ... ?");
+		JMenuItem mntmNewMenuItem_13 = new JMenuItem("what is ... ?");
+		mntmNewMenuItem_13.addActionListener(this);
 		mnNewMenu_5.add(mntmNewMenuItem_13);
 
-		JMenuItem mntmNewMenuItem_14 = new MyJMenuItem("Example JSON");
+		JMenuItem mntmNewMenuItem_14 = new JMenuItem("Example JSON");
+		mntmNewMenuItem_14.addActionListener(this);
 		mnNewMenu_5.add(mntmNewMenuItem_14);
 
-		JMenuItem mntmNewMenuItem_15 = new MyJMenuItem("about");
+		JMenuItem mntmNewMenuItem_15 = new JMenuItem("about");
 		mntmNewMenuItem_15.addActionListener(this);
 		mnNewMenu_5.add(mntmNewMenuItem_15);
 	}
