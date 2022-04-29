@@ -4,6 +4,7 @@ import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.Component;
 import java.awt.EventQueue;
+import java.awt.Font;
 import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -29,10 +30,11 @@ import javax.swing.SwingConstants;
  * 
  *
  */
-public class Prototyp01 implements ActionListener{
+public class Prototyp01 implements ActionListener {
 
 	private JFrame frame;
 	private JTextField textField;
+	private JTextArea textArea;
 
 	/**
 	 * Launch the application.
@@ -75,12 +77,15 @@ public class Prototyp01 implements ActionListener{
 		pnlEast.add(lblNewLabel);
 
 		JButton btnNewButton = new JButton("Font ++");
+		btnNewButton.addActionListener(this);
 		pnlEast.add(btnNewButton);
 
 		JButton btnNewButton_1 = new JButton("Font --");
+		btnNewButton_1.addActionListener(this);
 		pnlEast.add(btnNewButton_1);
 
 		JButton btnNewButton_2 = new JButton("Set Font");
+		btnNewButton_2.addActionListener(this);
 		pnlEast.add(btnNewButton_2);
 
 		textField = new JTextField();
@@ -117,7 +122,7 @@ public class Prototyp01 implements ActionListener{
 		JScrollPane scrollPane = new JScrollPane();
 		pnlCenter.add(scrollPane);
 
-		JTextArea textArea = new JTextArea();
+		textArea = new JTextArea();
 		scrollPane.setViewportView(textArea);
 
 		JMenuBar menuBar = new JMenuBar();
@@ -256,20 +261,94 @@ public class Prototyp01 implements ActionListener{
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		System.out.println(e.getActionCommand());
+
+		//Set Font
 		
-		switch(e.getActionCommand().toLowerCase()) {
-		case "EXIT":{
+		switch (e.getActionCommand()) {
+		case "Set Font": {
+			/**
+			 * Die Schriftgröße des Textfeldes soll um auf eine angegebene größe gesetzt werden
+			 */
+			/**
+			 * Lesen des bisherigen Font-Objektes
+			 */
+			Font oldFont = textArea.getFont();
+			/**
+			 * Aus dem bisherigen Font-Objekt einen neues Font-Objekt ableiten und die
+			 * Schriftgröße auf den speziellen wert setzen
+			 */
+			float value = Float.parseFloat(textField.getText());
+			Font newFont = oldFont.deriveFont(value);
+			/**
+			 * Das neue Font-Objekt an die TextArea weiterleiten
+			 */
+			textArea.setFont(newFont);
+			/**
+			 * Die neue Schriftgröße im Textfeld ausgeben
+			 */
+			textField.setText(newFont.getSize() + "");
+			break;
+		}
+		case "Font ++": {
+			/**
+			 * Die Schriftgröße des Textfeldes soll um eine stufe vergrößert
+			 * werden.
+			 */
+			/**
+			 * Lesen des bisherigen Font-Objektes
+			 */
+			Font oldFont = textArea.getFont();
+			/**
+			 * Aus dem bisherigen Font-Objekt einen neues Font-Objekt ableiten und die
+			 * Schriftgröße um 1 erhöhen
+			 */
+			Font newFont = oldFont.deriveFont(oldFont.getSize() + 1.0F);
+			/**
+			 * Das neue Font-Objekt an die TextArea weiterleiten
+			 */
+			textArea.setFont(newFont);
+			/**
+			 * Die neue Schriftgröße im Textfeld ausgeben
+			 */
+			textField.setText(newFont.getSize() + "");
+			break;
+		}
+		case "Font --": {
+			/**
+			 * Die Schriftgröße des Textfeldes soll um eine stufe verringert
+			 * werden.
+			 */
+			/**
+			 * Lesen des bisherigen Font-Objektes
+			 */
+			Font oldFont = textArea.getFont();
+			/**
+			 * Aus dem bisherigen Font-Objekt einen neues Font-Objekt ableiten und die
+			 * Schriftgröße um 1 verkleinern
+			 */
+			Font newFont = oldFont.deriveFont(oldFont.getSize() - 1.0F);
+			/**
+			 * Das neue Font-Objekt an die TextArea weiterleiten
+			 */
+			textArea.setFont(newFont);
+			/**
+			 * Die neue Schriftgröße im Textfeld ausgeben
+			 */
+			textField.setText(newFont.getSize() + "");
+			break;
+		}
+		case "Exit": {
 			System.exit(0);
 			break;
 		}
-		case "about":{
+		case "about": {
 			JOptionPane.showMessageDialog(frame, "Dies ist der About Dialog");
 			break;
 		}
-		default:{
+		default: {
 			System.out.println("Bitte was?");
 		}
 		}
-		
+
 	}
 }
