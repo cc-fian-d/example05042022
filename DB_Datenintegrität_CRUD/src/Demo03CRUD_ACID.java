@@ -30,17 +30,17 @@ import java.sql.Statement;
 	 */
 public class Demo03CRUD_ACID {
 
-	public static void main(String[] args) throws SQLException{
+	public static void main(String[] args) throws SQLException {
 //		String url = "jdbc:derby:memory:Transaction;create=true";
 		String url = "jdbc:derby:./DB/Transaction;create=true";
-		
+
 		Connection con = DriverManager.getConnection(url);
 
 		/**
 		 * Eine Transaction soll gestartet werden.
 		 */
 		con.setAutoCommit(false);
-		
+
 		/**
 		 * ACID
 		 * 
@@ -53,48 +53,46 @@ public class Demo03CRUD_ACID {
 		 * durability
 		 * 
 		 */
-		
+
 		/**
 		 * Erzeugen einer Tabelle ANFANG
 		 */
 		String sql = "CREATE TABLE personen (\r\n"
 				+ "	  id INT NOT NULL GENERATED ALWAYS AS IDENTITY (START WITH 1, INCREMENT BY 1),\r\n"
-				+ "	  vorname VARCHAR(45),\r\n"
-				+ "	  nachname VARCHAR(45),\r\n"
+				+ "	  vorname VARCHAR(45),\r\n" + "	  nachname VARCHAR(45),\r\n"
 				+ "	  geburtsjahr INT,\r\n"
 				+ "	  CONSTRAINT pk_id PRIMARY KEY (id) )";
-		
+
 		Statement stm = con.createStatement();
-		
-		
-		
+
 		try {
 			stm.executeUpdate(sql);
 
 		} catch (SQLException e) {
-			if(e.getSQLState().equals("X0Y32")) {
-				System.out.println("----------------------------Tabelle war schon vorhanden");
+			if (e.getSQLState().equals("X0Y32")) {
+				System.out.println(
+						"----------------------------Tabelle war schon vorhanden");
 			} else {
 				throw e;
 			}
 		}
-	
+
 		stm.close();
 		/**
 		 * Erzeugen einer Tabelle ENDE
 		 */
-		
+
 		/**
 		 * Einfügen von Daten in die Tabelle ANFANG
 		 */
 		sql = "INSERT INTO personen (vorname,nachname,geburtsjahr) VALUES (?,?,?)";
-		PreparedStatement prep = con.prepareStatement(sql); 
-		
+		PreparedStatement prep = con.prepareStatement(sql);
+
 		prep.setString(1, "Hildegard");
 		prep.setString(2, "Schnupf");
 		prep.setInt(3, 1965);
 		prep.executeUpdate();
-		
+
 		/**
 		 * Es ist ein fehler aufgetreten
 		 */
@@ -102,7 +100,7 @@ public class Demo03CRUD_ACID {
 		con.rollback();
 		System.out.println("Beendet");
 		System.exit(0);
-		
+
 		prep.setString(1, "Fred");
 		prep.setString(2, "Feuerstein");
 		prep.setInt(3, 1948);
@@ -111,12 +109,12 @@ public class Demo03CRUD_ACID {
 		/**
 		 * Einfügen von Daten in die Tabelle ENDE
 		 */
-				
+
 		/**
 		 * Die Transaction ist beendet
 		 */
 		con.commit();
-		
+
 		/**
 		 * Ausgeben der Daten
 		 */
@@ -128,8 +126,8 @@ public class Demo03CRUD_ACID {
 						"nachname", "geburtsjahr");
 				while (res.next()) {
 					System.out.printf("%3d | %12s | %12s | %12d %n",
-							res.getInt(1), res.getString(2),
-							res.getString(3), res.getInt(4));
+							res.getInt(1), res.getString(2), res.getString(3),
+							res.getInt(4));
 				}
 			}
 		} catch (SQLException e) {
